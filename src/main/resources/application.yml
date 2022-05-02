@@ -5,9 +5,9 @@ spring:
   application:
     name: gateway
   cloud:    gateway:      routes:      - id: stockMarket
-        uri: http://localhost:8085/        predicates:        - Path=/api/v1.0/market/company/**
+        uri: lb://company-service        predicates:        - Path=/api/v1.0/market/company/**
       - id: stockMicroservice
-        uri: http://localhost:8086/
+        uri: lb://stock-service
         predicates:        - Path=/api/v1.0/market/stock/**
         
 eureka:
