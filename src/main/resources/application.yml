@@ -8,7 +8,8 @@ spring:
         uri: lb://company-service        predicates:        - Path=/api/v1.0/market/company/**
       - id: stockService
         uri: lb://stock-service
-        predicates:        - Path=/api/v1.0/market/stock/**  security:    user:      name: riya
+        predicates:        - Path=/api/v1.0/market/stock/**
+  security:    user:      name: riya
       password: riya@123
         
 eureka:
